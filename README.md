@@ -1,6 +1,6 @@
 # Tiny Garden 🌱
 
-A cozy, one-screen browser game about helping a tiny potted plant reach full bloom. Catch falling water and sunlight, dodge hungry bugs, and grow through five hand-drawn stages as the sky shifts from day to night.
+A cozy, one-screen browser game about helping a tiny potted plant reach full bloom. Catch falling water and sunlight, dodge hungry bugs, and grow through five pastel pixel-art stages as the sky shifts from day to night.
 
 Built as a portfolio project with **TypeScript**, **PixiJS 8**, **Vite**, and plain CSS. All artwork, particles, animation, and sound are generated in code, so there are no external image or audio assets to manage.
 
@@ -24,8 +24,8 @@ Then open the local URL printed by Vite.
 
 - Water drops are worth 10 points
 - Sunbeams are worth 15 points
-- Bugs remove one heart
-- Every three missed resources removes one heart
+- Bugs remove one health leaf
+- Every three missed resources wilts one health leaf
 - Reach 400 points to fully bloom
 
 The pace and bug frequency increase over time. High scores and the sound preference are saved in `localStorage`.
@@ -33,7 +33,7 @@ The pace and bug frequency increase over time. High scores and the sound prefere
 ## Highlights
 
 - Custom game loop, collision detection, spawning, difficulty, and state management
-- Five animated plant growth stages drawn with PixiJS primitives
+- Five animated pixel-art plant growth stages drawn with PixiJS primitives
 - Responsive keyboard, pointer, and mobile touch input
 - Procedural particles, screen shake, drifting clouds, and a day/sunset/night transition
 - Web Audio API sound effects with a persistent mute control
@@ -55,7 +55,13 @@ npm run preview    # Preview the production build
 .
 ├── index.html       # DOM interface and accessible menus
 ├── src/
-│   ├── main.ts      # PixiJS game, entities, input, audio, and state
+│   ├── components/
+│   │   ├── background.ts  # Sky, clouds, stars, hills, and atmosphere
+│   │   ├── characters.ts  # Player, falling items, and particles
+│   │   └── leaderboard.ts # HUD, results, settings, and high scores
+│   ├── game/
+│   │   └── config.ts      # Shared types, colors, stages, and helpers
+│   ├── main.ts      # Game state, input, audio, and orchestration
 │   └── style.css    # Responsive UI and presentation
 ├── package.json
 └── tsconfig.json

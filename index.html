@@ -16,7 +16,7 @@
       <div id="game" class="game" aria-label="Tiny Garden game area">
         <div class="topbar" aria-live="polite">
           <div class="stat-card score-card">
-            <span class="stat-label">Harvest</span>
+            <span class="stat-label">Score</span>
             <strong><span id="score">0</span><small> pts</small></strong>
           </div>
 
@@ -31,8 +31,12 @@
           </div>
 
           <div class="stat-card lives-card">
-            <span class="stat-label">Garden health</span>
-            <strong id="lives" aria-label="3 hearts">♥ ♥ ♥</strong>
+            <span class="stat-label">Health</span>
+            <div id="lives" class="leaf-meter" aria-label="3 of 3 healthy leaves">
+              <span class="life-leaf is-full" aria-hidden="true"></span>
+              <span class="life-leaf is-full" aria-hidden="true"></span>
+              <span class="life-leaf is-full" aria-hidden="true"></span>
+            </div>
           </div>
         </div>
 
@@ -58,44 +62,48 @@
             <p class="eyebrow">A pocket-sized growing game</p>
             <h1 id="game-title">Tiny Garden</h1>
             <p class="intro">
-              Catch <strong>raindrops</strong> and <strong>sunbeams</strong> to help your tiny friend bloom.
-              Dodge the hungry bugs!
+              Move your pot under <strong>both blue raindrops</strong> and <strong>golden sunbeams</strong>
+              to grow. Let the hungry bugs fall past you!
             </p>
             <div class="how-to">
-              <div><span class="item-dot water">◆</span><b>+10</b><small>Water</small></div>
-              <div><span class="item-dot sun">✦</span><b>+15</b><small>Sun</small></div>
-              <div><span class="item-dot bug">●</span><b>−1 ♥</b><small>Bug</small></div>
+              <div><span class="item-dot water">◆</span><b>WATER</b><small>Catch · +10</small></div>
+              <div><span class="item-dot sun">✦</span><b>SUN</b><small>Catch · +15</small></div>
+              <div><span class="item-dot bug">●</span><b>BUG</b><small>Dodge · −1 leaf</small></div>
             </div>
+            <p class="miss-rule"><span aria-hidden="true">!</span> Miss 3 water or sun items and one health leaf wilts.</p>
             <button id="start-button" class="primary-button" type="button">
               <span>Grow my garden</span><span aria-hidden="true">→</span>
             </button>
-            <p class="controls-hint"><kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> to move</p>
+            <p class="controls-hint">
+              <span class="desktop-hint"><kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> to move</span>
+              <span class="mobile-hint">Drag the pot or hold the on-screen arrows</span>
+            </p>
             <p class="best-line">Best bloom: <strong><span id="best-score">0</span> pts</strong></p>
           </div>
         </section>
 
         <section id="pause-screen" class="screen" aria-labelledby="pause-title">
           <div class="panel compact-panel">
-            <div class="mini-icon" aria-hidden="true">🌿</div>
+            <div class="mini-icon" aria-hidden="true">✦</div>
             <p class="eyebrow">Taking a tiny break</p>
             <h2 id="pause-title">Garden paused</h2>
             <button id="resume-button" class="primary-button" type="button">Keep growing</button>
-            <button id="quit-button" class="text-button" type="button">Back to meadow</button>
+            <button id="quit-button" class="text-button" type="button"><span aria-hidden="true">←</span> Back to meadow</button>
           </div>
         </section>
 
         <section id="end-screen" class="screen" aria-labelledby="end-title">
           <div class="panel compact-panel">
-            <div id="end-icon" class="mini-icon" aria-hidden="true">🌱</div>
+            <div id="end-icon" class="mini-icon" aria-hidden="true">+</div>
             <p id="end-eyebrow" class="eyebrow">The garden is resting</p>
             <h2 id="end-title">Almost there!</h2>
             <p id="end-copy" class="end-copy">A hungry bug got the final nibble.</p>
             <div class="result-card">
-              <span>Harvest</span><strong id="final-score">0</strong>
+              <span>Score</span><strong id="final-score">0</strong>
               <span>Best</span><strong id="final-best">0</strong>
             </div>
             <button id="restart-button" class="primary-button" type="button">Try another seed</button>
-            <button id="home-button" class="text-button" type="button">Back to meadow</button>
+            <button id="home-button" class="text-button" type="button"><span aria-hidden="true">←</span> Back to meadow</button>
           </div>
         </section>
 

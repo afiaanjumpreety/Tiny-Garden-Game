@@ -1,8 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#fff4dc"/>
-  <path d="M31 38c0-15 0-22 1-28" fill="none" stroke="#477f5d" stroke-width="5" stroke-linecap="round"/>
-  <path d="M31 26C18 26 13 19 14 12c11-1 18 3 18 13Z" fill="#77b76d"/>
-  <path d="M32 34c14 0 19-7 18-14-11-1-18 3-18 13Z" fill="#89ca79"/>
-  <path d="M15 37h34l-4 19c-8 5-18 5-26 0Z" fill="#df9470"/>
-  <path d="M13 36c0-3 2-5 5-5h28c3 0 5 2 5 5s-2 5-5 5H18c-3 0-5-2-5-5Z" fill="#f1af83"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="crispEdges">
+  <!-- warm pixel frame -->
+  <path fill="#fff5e5" d="M8 0h48v4h4v4h4v48h-4v4h-4v4H8v-4H4v-4H0V8h4V4h4z"/>
+  <path fill="#c7a38e" d="M8 4h48v4h4v48h-4v4H8v-4H4V8h4zm4 4v4H8v40h4v4h40v-4h4V12h-4V8z"/>
+
+  <!-- stem and leaves -->
+  <path fill="#477f5d" d="M29 14h6v28h-6z"/>
+  <path fill="#86c777" d="M32 14h3v28h-3z"/>
+  <path fill="#477f5d" d="M13 14h12v3h6v12H19v-3h-6z"/>
+  <path fill="#73ad68" d="M16 17h9v3h3v6h-9v-3h-3z"/>
+  <path fill="#477f5d" d="M39 23h12v3h3v9h-3v3H35V29h4z"/>
+  <path fill="#86c777" d="M39 29h3v-3h9v6h-3v3h-9z"/>
+
+  <!-- soil and terracotta pot -->
+  <path fill="#725747" d="M16 38h32v7H16z"/>
+  <path fill="#a47b69" d="M20 38h12v3H20z"/>
+  <path fill="#a47b69" d="M12 39h40v10h-4v11H16V49h-4z"/>
+  <path fill="#f1af83" d="M16 42h32v5H16z"/>
+  <path fill="#df9c72" d="M20 49h24v8H20z"/>
+  <path fill="#f1af83" d="M20 49h5v5h-5z"/>
+
+  <!-- tiny face -->
+  <path fill="#806356" d="M25 51h3v3h-3zm11 0h3v3h-3zm-7 3h3v2h3v-2h2v4h-8z"/>
 </svg>
