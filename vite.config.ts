@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/Tiny-Garden-Game/',
+  base: process.env.VERCEL ? '/' : '/Tiny-Garden-Game/',
 });

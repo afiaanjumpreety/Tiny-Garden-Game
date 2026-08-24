@@ -4,7 +4,7 @@ A cozy, one-screen browser game about helping a tiny potted plant reach full blo
 
 Built as a portfolio project with **TypeScript**, **PixiJS 8**, **Vite**, and plain CSS. All artwork, particles, animation, and sound are generated in code, so there are no external image or audio assets to manage.
 
-**Play online:** [afiaanjumpreety.github.io/Tiny-Garden-Game](https://afiaanjumpreety.github.io/Tiny-Garden-Game/)
+**Play online:** [tiny-garden-game.vercel.app](https://tiny-garden-game.vercel.app/)
 
 ## Screenshots
 
