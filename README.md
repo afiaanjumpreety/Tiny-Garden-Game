@@ -6,7 +6,7 @@ Built as a portfolio project with **TypeScript**, **PixiJS 8**, **Vite**, and pl
 
 I created this project through **vibe coding**, directing the game concept, pixel-art style, mechanics, and iterative refinements while using AI-assisted development to bring it to life.
 
-**Play online:** [GitHub Pages](https://afiaanjumpreety.github.io/tiny-garden/)
+**Play online:** [https://afiaanjumpreety.github.io/tiny-garden/](https://afiaanjumpreety.github.io/tiny-garden/)
 
 ## Screenshots
 
