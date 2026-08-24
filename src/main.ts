@@ -23,8 +23,13 @@ class TinySynth {
 
   unlock(): void {
     if (!this.enabled) return;
-    this.context ??= new AudioContext();
-    if (this.context.state === 'suspended') void this.context.resume();
+    try {
+      this.context ??= new AudioContext();
+      if (this.context.state === 'suspended') void this.context.resume();
+    } catch {
+      // Sound is optional; unsupported audio must never prevent the game from starting.
+      this.enabled = false;
+    }
   }
 
   private note(frequency: number, duration: number, type: OscillatorType, volume = 0.035, delay = 0): void {
@@ -232,13 +237,14 @@ function resetGame(): void {
 }
 
 function startGame(): void {
-  synth.unlock();
   resetGame();
   phase = 'playing';
   pauseButton.firstElementChild!.textContent = 'Ⅱ';
   pauseButton.setAttribute('aria-label', 'Pause game');
   setScreen(null);
   showToast('Catch rain + sunshine!');
+  // Gameplay starts first so an unavailable audio API can never block entry.
+  synth.unlock();
 }
 
 function returnHome(): void {
