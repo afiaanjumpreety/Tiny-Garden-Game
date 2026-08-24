@@ -182,12 +182,17 @@ async function initializeGame(): Promise<void> {
   let leftHeld = false;
   let rightHeld = false;
 
+  function menuPlayerX(width: number): number {
+    return Math.min(width - 52, Math.max(width * 0.76, width - 92));
+  }
+
   function layoutScene(): void {
     const { width, height } = app.screen;
     const groundY = height - (width < 720 ? 74 : 65);
     player.y = groundY;
+    player.view.visible = phase !== 'menu' || width > 720;
     if (phase === 'menu') {
-      player.x = width * 0.76;
+      player.x = menuPlayerX(width);
       player.targetX = player.x;
     } else {
       player.x = clamp(player.x, 52, width - 52);
@@ -233,6 +238,7 @@ async function initializeGame(): Promise<void> {
     player.x = app.screen.width / 2;
     player.targetX = player.x;
     player.y = app.screen.height - (app.screen.width < 720 ? 74 : 65);
+    player.view.visible = true;
     player.reset();
     leaderboard.update(score, health, growthStage);
   }
@@ -417,7 +423,7 @@ async function initializeGame(): Promise<void> {
     updateParticles(delta);
     if (phase === 'playing') updateGame(delta);
     else if (phase === 'menu') {
-      player.targetX = app.screen.width * 0.76 + Math.sin(performance.now() / 1600) * 24;
+      player.targetX = menuPlayerX(app.screen.width) + Math.sin(performance.now() / 1600) * 12;
       player.update(delta, 0, 48, app.screen.width - 48);
     }
     if (toastTimeout > 0) {

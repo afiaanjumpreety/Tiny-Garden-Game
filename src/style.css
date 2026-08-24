@@ -38,7 +38,7 @@ button { -webkit-tap-highlight-color: transparent; }
   position: relative;
   width: min(1180px, 100%);
   height: 100%;
-  min-height: 540px;
+  min-height: 0;
   margin: auto;
   overflow: hidden;
   isolation: isolate;
@@ -168,7 +168,12 @@ button { -webkit-tap-highlight-color: transparent; }
   transition: transform .45s cubic-bezier(.2,.9,.25,1.15);
 }
 .is-visible .panel { transform: none; }
-.start-panel { padding-top: 24px; }
+.start-panel {
+  max-height: calc(100dvh - 48px);
+  padding-top: 24px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
 .compact-panel { max-width: 370px; }
 .eyebrow { margin: 6px 0 7px; color: #739071; font-family: 'Press Start 2P', monospace; font-size: .5rem; font-weight: 400; letter-spacing: .04em; line-height: 1.6; text-transform: uppercase; }
 h1, h2 { margin: 0; color: var(--ink); font-family: 'Press Start 2P', monospace; line-height: 1.25; text-shadow: 3px 3px 0 #d9dfbd; }
@@ -285,7 +290,7 @@ kbd { display: inline-grid; min-width: 25px; height: 23px; place-items: center; 
   .mobile-controls button { width: 58px; height: 50px; font-size: 1rem; }
   .screen { padding: max(8px, env(safe-area-inset-top)) 10px max(8px, env(safe-area-inset-bottom)); }
   .panel { padding: 22px 20px; border-radius: 6px; }
-  .start-panel { max-height: calc(100dvh - 16px); overflow: auto; overscroll-behavior: contain; }
+  .start-panel { max-height: calc(100dvh - 16px); }
   .primary-button { min-height: 40px; font-size: .6rem; }
   .controls-hint { margin-top: 15px; font-size: .72rem; }
   .desktop-hint { display: none; }
