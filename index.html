@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff4dc" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Tiny Garden — a cozy catch-and-grow browser game built with TypeScript and PixiJS."
+    />
+    <title>Tiny Garden</title>
+  </head>
+  <body>
+    <main class="game-shell">
+      <div id="game" class="game" aria-label="Tiny Garden game area">
+        <div class="topbar" aria-live="polite">
+          <div class="stat-card score-card">
+            <span class="stat-label">Harvest</span>
+            <strong><span id="score">0</span><small> pts</small></strong>
+          </div>
+
+          <div class="growth-card">
+            <div class="growth-copy">
+              <span id="stage-name">Little Seed</span>
+              <span id="growth-count">0 / 50</span>
+            </div>
+            <div class="growth-track" aria-label="Plant growth progress">
+              <span id="growth-bar"></span>
+            </div>
+          </div>
+
+          <div class="stat-card lives-card">
+            <span class="stat-label">Garden health</span>
+            <strong id="lives" aria-label="3 hearts">♥ ♥ ♥</strong>
+          </div>
+        </div>
+
+        <div class="utility-buttons">
+          <button id="pause-button" class="icon-button" type="button" aria-label="Pause game" title="Pause (P)">
+            <span aria-hidden="true">Ⅱ</span>
+          </button>
+          <button id="sound-button" class="icon-button" type="button" aria-label="Turn sound off" title="Sound">
+            <span aria-hidden="true">♪</span>
+          </button>
+        </div>
+
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+        <section id="start-screen" class="screen is-visible" aria-labelledby="game-title">
+          <div class="panel start-panel">
+            <div class="logo-plant" aria-hidden="true">
+              <span class="logo-leaf left"></span>
+              <span class="logo-leaf right"></span>
+              <span class="logo-flower">✿</span>
+              <span class="logo-pot">⌣</span>
+            </div>
+            <p class="eyebrow">A pocket-sized growing game</p>
+            <h1 id="game-title">Tiny Garden</h1>
+            <p class="intro">
+              Catch <strong>raindrops</strong> and <strong>sunbeams</strong> to help your tiny friend bloom.
+              Dodge the hungry bugs!
+            </p>
+            <div class="how-to">
+              <div><span class="item-dot water">◆</span><b>+10</b><small>Water</small></div>
+              <div><span class="item-dot sun">✦</span><b>+15</b><small>Sun</small></div>
+              <div><span class="item-dot bug">●</span><b>−1 ♥</b><small>Bug</small></div>
+            </div>
+            <button id="start-button" class="primary-button" type="button">
+              <span>Grow my garden</span><span aria-hidden="true">→</span>
+            </button>
+            <p class="controls-hint"><kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> to move</p>
+            <p class="best-line">Best bloom: <strong><span id="best-score">0</span> pts</strong></p>
+          </div>
+        </section>
+
+        <section id="pause-screen" class="screen" aria-labelledby="pause-title">
+          <div class="panel compact-panel">
+            <div class="mini-icon" aria-hidden="true">🌿</div>
+            <p class="eyebrow">Taking a tiny break</p>
+            <h2 id="pause-title">Garden paused</h2>
+            <button id="resume-button" class="primary-button" type="button">Keep growing</button>
+            <button id="quit-button" class="text-button" type="button">Back to meadow</button>
+          </div>
+        </section>
+
+        <section id="end-screen" class="screen" aria-labelledby="end-title">
+          <div class="panel compact-panel">
+            <div id="end-icon" class="mini-icon" aria-hidden="true">🌱</div>
+            <p id="end-eyebrow" class="eyebrow">The garden is resting</p>
+            <h2 id="end-title">Almost there!</h2>
+            <p id="end-copy" class="end-copy">A hungry bug got the final nibble.</p>
+            <div class="result-card">
+              <span>Harvest</span><strong id="final-score">0</strong>
+              <span>Best</span><strong id="final-best">0</strong>
+            </div>
+            <button id="restart-button" class="primary-button" type="button">Try another seed</button>
+            <button id="home-button" class="text-button" type="button">Back to meadow</button>
+          </div>
+        </section>
+
+        <div class="mobile-controls" aria-label="Movement controls">
+          <button id="move-left" type="button" aria-label="Move left">←</button>
+          <button id="move-right" type="button" aria-label="Move right">→</button>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
