@@ -4,6 +4,22 @@ A cozy, one-screen browser game about helping a tiny potted plant reach full blo
 
 Built as a portfolio project with **TypeScript**, **PixiJS 8**, **Vite**, and plain CSS. All artwork, particles, animation, and sound are generated in code, so there are no external image or audio assets to manage.
 
+## Screenshots
+
+### Start your tiny garden
+
+![Tiny Garden starting screen](docs/screenshots/start-view.png)
+
+### Catch, dodge, and grow
+
+![Tiny Garden gameplay with falling water, sunlight, and bugs](docs/screenshots/gameplay-view.png)
+
+### Reach full bloom
+
+<p align="center">
+  <img src="docs/screenshots/full-bloom-view.png" alt="Tiny Garden fully bloomed victory screen" width="720" />
+</p>
+
 ## Play
 
 ```bash
